@@ -1,0 +1,25 @@
+{
+  "species": "moth",
+  "canvas": [
+    1536,
+    1536
+  ],
+  "pupils": [
+    [
+      636.0,
+      651.2
+    ],
+    [
+      902.5,
+      650.5
+    ]
+  ],
+  "pupil_radius": 64.2,
+  "pupil_travel": 35.3,
+  "layers": {
+    "pupil_l": "pupil_l.png",
+    "pupil_r": "pupil_r.png",
+    "body": "body.png"
+  },
+  "blank_eyes": true
+}

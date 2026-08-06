@@ -1,0 +1,288 @@
+{
+  "schema_version": 1,
+  "_comment": [
+    "Campaign shape and economy, as data so balance is a text edit rather than a rebuild.",
+    "",
+    "tiers is [tier1, tier2, tier3] selection weights for that night's anomalies.",
+    "",
+    "shift_constraints matter more than anomaly_rate: at 8-12 patients a plain 35% roll",
+    "regularly produces a shift with zero anomalies (boring, and it teaches the player that",
+    "ADMIT-everything works) or five in a row (feels rigged). The constraints clamp both tails.",
+    "",
+    "Campaign retries reroll the shift with a new seed so memorising a failed night cannot",
+    "trivialise it. Endless uses a date-derived seed so everyone gets the same daily run,",
+    "which is what makes a score worth sharing."
+  ],
+  "nights": [
+    {
+      "night": 0,
+      "patients": 6,
+      "anomaly_rate": 0.5,
+      "tiers": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "onboarding": true,
+      "tools": [
+        "chart"
+      ],
+      "channels": [
+        "visual"
+      ],
+      "weather": {
+        "rain": 0.0,
+        "fog": 0.0
+      }
+    },
+    {
+      "night": 1,
+      "patients": 8,
+      "anomaly_rate": 0.3,
+      "tiers": [
+        0.8,
+        0.2,
+        0.0
+      ],
+      "tools": [
+        "chart"
+      ],
+      "channels": [
+        "visual"
+      ],
+      "weather": {
+        "rain": 0.0,
+        "fog": 0.1
+      }
+    },
+    {
+      "night": 2,
+      "patients": 8,
+      "anomaly_rate": 0.35,
+      "tiers": [
+        0.6,
+        0.4,
+        0.0
+      ],
+      "tools": [
+        "chart"
+      ],
+      "channels": [
+        "visual",
+        "data"
+      ],
+      "weather": {
+        "rain": 0.25,
+        "fog": 0.0
+      }
+    },
+    {
+      "night": 3,
+      "patients": 9,
+      "anomaly_rate": 0.35,
+      "tiers": [
+        0.4,
+        0.5,
+        0.1
+      ],
+      "tools": [
+        "chart",
+        "handbook"
+      ],
+      "channels": [
+        "visual",
+        "data",
+        "behaviour"
+      ],
+      "guarantee_channel": "behaviour",
+      "unlocks": "handbook",
+      "weather": {
+        "rain": 0.0,
+        "fog": 0.35
+      }
+    },
+    {
+      "night": 4,
+      "patients": 10,
+      "anomaly_rate": 0.35,
+      "tiers": [
+        0.3,
+        0.5,
+        0.2
+      ],
+      "tools": [
+        "chart",
+        "handbook",
+        "xray"
+      ],
+      "channels": [
+        "visual",
+        "data",
+        "behaviour",
+        "skeleton"
+      ],
+      "guarantee_channel": "skeleton",
+      "unlocks": "xray",
+      "weather": {
+        "rain": 0.55,
+        "fog": 0.1
+      }
+    },
+    {
+      "night": 5,
+      "patients": 11,
+      "anomaly_rate": 0.38,
+      "tiers": [
+        0.2,
+        0.5,
+        0.3
+      ],
+      "tools": [
+        "chart",
+        "handbook",
+        "xray",
+        "stethoscope"
+      ],
+      "channels": [
+        "visual",
+        "data",
+        "behaviour",
+        "skeleton",
+        "sound"
+      ],
+      "guarantee_channel": "sound",
+      "unlocks": "stethoscope",
+      "weather": {
+        "rain": 0.2,
+        "fog": 0.5
+      }
+    },
+    {
+      "night": 6,
+      "patients": 12,
+      "anomaly_rate": 0.4,
+      "tiers": [
+        0.1,
+        0.45,
+        0.45
+      ],
+      "tools": [
+        "chart",
+        "handbook",
+        "xray",
+        "stethoscope"
+      ],
+      "channels": [
+        "visual",
+        "data",
+        "behaviour",
+        "skeleton",
+        "sound"
+      ],
+      "weather": {
+        "rain": 0.75,
+        "fog": 0.2
+      }
+    },
+    {
+      "night": 7,
+      "patients": 12,
+      "anomaly_rate": 0.4,
+      "tiers": [
+        0.1,
+        0.4,
+        0.5
+      ],
+      "tools": [
+        "chart",
+        "handbook",
+        "xray",
+        "stethoscope"
+      ],
+      "channels": [
+        "visual",
+        "data",
+        "behaviour",
+        "skeleton",
+        "sound"
+      ],
+      "weather": {
+        "rain": 0.85,
+        "fog": 0.45
+      }
+    }
+  ],
+  "shift_constraints": {
+    "min_anomalies": 2,
+    "max_anomaly_streak": 3,
+    "max_healthy_streak": 4,
+    "no_creature_repeat_in_shift": true,
+    "max_same_anomaly_type": 2
+  },
+  "strikes": {
+    "max": 3,
+    "rewarded_continue_per_run": 1,
+    "continue_clears_strikes": 1
+  },
+  "hints": {
+    "second_opinion_per_shift": 2,
+    "highlight_seconds": 1.5
+  },
+  "scoring": {
+    "correct": 100,
+    "streak_step": 25,
+    "streak_cap": 10,
+    "speed_bonus": 50,
+    "speed_under_s": 6.0
+  },
+  "endless": {
+    "entry_night_equivalent": 4,
+    "wave_size": 10,
+    "anomaly_rate": 0.38,
+    "tier3_ramp_per_wave": 0.05,
+    "tier3_cap": 0.65,
+    "daily_seed_prefix": "pawward-",
+    "tools": [
+      "chart",
+      "handbook",
+      "xray",
+      "stethoscope"
+    ],
+    "channels": [
+      "visual",
+      "data",
+      "behaviour",
+      "skeleton",
+      "sound"
+    ],
+    "weather": {
+      "rain": 0.6,
+      "fog": 0.3
+    }
+  },
+  "ads": {
+    "_comment": "Interstitials are gated to the shift-end screen only. Never mid-shift \u2014 mid-task ads are the single most common complaint across every incumbent studied in the niche research.",
+    "interstitial_min_shifts_between": 2,
+    "interstitial_min_seconds_between": 150,
+    "suppress_before_night": 2
+  },
+  "tools": {
+    "_comment": "Display names and the night each tool is introduced.",
+    "chart": {
+      "label": "Chart",
+      "night": 0
+    },
+    "handbook": {
+      "label": "Handbook",
+      "night": 3
+    },
+    "xray": {
+      "label": "X-Ray",
+      "night": 4
+    },
+    "stethoscope": {
+      "label": "Stethoscope",
+      "night": 5
+    }
+  }
+}

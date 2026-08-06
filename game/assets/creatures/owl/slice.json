@@ -1,0 +1,25 @@
+{
+  "species": "owl",
+  "canvas": [
+    1536,
+    1536
+  ],
+  "pupils": [
+    [
+      627.3,
+      632.3
+    ],
+    [
+      948.0,
+      656.2
+    ]
+  ],
+  "pupil_radius": 16.8,
+  "pupil_travel": 9.2,
+  "layers": {
+    "pupil_l": "pupil_l.png",
+    "pupil_r": "pupil_r.png",
+    "body": "body.png"
+  },
+  "blank_eyes": true
+}

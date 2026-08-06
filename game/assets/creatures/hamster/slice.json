@@ -1,0 +1,25 @@
+{
+  "species": "hamster",
+  "canvas": [
+    1536,
+    1536
+  ],
+  "pupils": [
+    [
+      572.1,
+      641.0
+    ],
+    [
+      963.3,
+      642.9
+    ]
+  ],
+  "pupil_radius": 49.0,
+  "pupil_travel": 27.0,
+  "layers": {
+    "pupil_l": "pupil_l.png",
+    "pupil_r": "pupil_r.png",
+    "body": "body.png"
+  },
+  "blank_eyes": true
+}

@@ -1,0 +1,34 @@
+# Godot
+game/.godot/
+game/android/
+game/ios/
+*.translation
+
+# Build output
+builds/
+
+# Art pipeline: generated bulk. Seeds and rejected attempts also live in ComfyUI's own
+# output dir, so losing them costs nothing. Masks, .kra sources and final game assets ARE
+# committed — those are the irreproducible parts.
+art-pipeline/raw/
+art-pipeline/export/
+art-pipeline/qa/rejects/
+art-pipeline/qa/*_diff.png
+art-pipeline/qa/*_pair.png
+
+# Secrets — App Store Connect API keys, signing material. Never commit.
+*.p8
+*.p12
+*.mobileprovision
+*.cer
+.env
+
+# OS / editor
+Thumbs.db
+desktop.ini
+.DS_Store
+__pycache__/
+
+# Slicer diagnostics — useful locally, not game content
+game/assets/creatures/*/_debug_slice.*
+game/assets/creatures/*/_debug_slice.*.import

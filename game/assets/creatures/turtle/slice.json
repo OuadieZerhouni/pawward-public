@@ -1,0 +1,25 @@
+{
+  "species": "turtle",
+  "canvas": [
+    1536,
+    1536
+  ],
+  "pupils": [
+    [
+      589.9,
+      396.2
+    ],
+    [
+      946.9,
+      390.6
+    ]
+  ],
+  "pupil_radius": 37.0,
+  "pupil_travel": 20.4,
+  "layers": {
+    "pupil_l": "pupil_l.png",
+    "pupil_r": "pupil_r.png",
+    "body": "body.png"
+  },
+  "blank_eyes": true
+}

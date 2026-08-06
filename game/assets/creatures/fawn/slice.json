@@ -1,0 +1,25 @@
+{
+  "species": "fawn",
+  "canvas": [
+    1536,
+    1536
+  ],
+  "pupils": [
+    [
+      594.5,
+      607.3
+    ],
+    [
+      947.8,
+      606.8
+    ]
+  ],
+  "pupil_radius": 50.5,
+  "pupil_travel": 27.8,
+  "layers": {
+    "pupil_l": "pupil_l.png",
+    "pupil_r": "pupil_r.png",
+    "body": "body.png"
+  },
+  "blank_eyes": true
+}

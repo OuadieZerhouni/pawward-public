@@ -1,0 +1,25 @@
+{
+  "species": "frog",
+  "canvas": [
+    1536,
+    1536
+  ],
+  "pupils": [
+    [
+      491.8,
+      459.0
+    ],
+    [
+      1046.2,
+      457.0
+    ]
+  ],
+  "pupil_radius": 53.5,
+  "pupil_travel": 29.4,
+  "layers": {
+    "pupil_l": "pupil_l.png",
+    "pupil_r": "pupil_r.png",
+    "body": "body.png"
+  },
+  "blank_eyes": true
+}

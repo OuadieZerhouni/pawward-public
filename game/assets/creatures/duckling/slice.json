@@ -1,0 +1,25 @@
+{
+  "species": "duckling",
+  "canvas": [
+    1536,
+    1536
+  ],
+  "pupils": [
+    [
+      577.9,
+      536.9
+    ],
+    [
+      956.9,
+      531.7
+    ]
+  ],
+  "pupil_radius": 44.0,
+  "pupil_travel": 24.2,
+  "layers": {
+    "pupil_l": "pupil_l.png",
+    "pupil_r": "pupil_r.png",
+    "body": "body.png"
+  },
+  "blank_eyes": true
+}

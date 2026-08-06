@@ -1,0 +1,25 @@
+{
+  "species": "rabbit",
+  "canvas": [
+    1536,
+    1536
+  ],
+  "pupils": [
+    [
+      582.0,
+      501.0
+    ],
+    [
+      959.8,
+      501.6
+    ]
+  ],
+  "pupil_radius": 42.8,
+  "pupil_travel": 23.5,
+  "layers": {
+    "pupil_l": "pupil_l.png",
+    "pupil_r": "pupil_r.png",
+    "body": "body.png"
+  },
+  "blank_eyes": true
+}

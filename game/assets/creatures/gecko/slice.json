@@ -1,0 +1,25 @@
+{
+  "species": "gecko",
+  "canvas": [
+    1536,
+    1536
+  ],
+  "pupils": [
+    [
+      515.4,
+      441.0
+    ],
+    [
+      1029.1,
+      444.8
+    ]
+  ],
+  "pupil_radius": 76.0,
+  "pupil_travel": 41.8,
+  "layers": {
+    "pupil_l": "pupil_l.png",
+    "pupil_r": "pupil_r.png",
+    "body": "body.png"
+  },
+  "blank_eyes": true
+}

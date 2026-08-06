@@ -1,0 +1,25 @@
+{
+  "species": "fox",
+  "canvas": [
+    1536,
+    1536
+  ],
+  "pupils": [
+    [
+      613.2,
+      714.2
+    ],
+    [
+      936.4,
+      715.3
+    ]
+  ],
+  "pupil_radius": 58.5,
+  "pupil_travel": 32.2,
+  "layers": {
+    "pupil_l": "pupil_l.png",
+    "pupil_r": "pupil_r.png",
+    "body": "body.png"
+  },
+  "blank_eyes": true
+}

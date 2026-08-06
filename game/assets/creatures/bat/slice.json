@@ -1,0 +1,25 @@
+{
+  "species": "bat",
+  "canvas": [
+    1536,
+    1536
+  ],
+  "pupils": [
+    [
+      436.2,
+      555.6
+    ],
+    [
+      837.8,
+      415.0
+    ]
+  ],
+  "pupil_radius": 37.2,
+  "pupil_travel": 20.5,
+  "layers": {
+    "pupil_l": "pupil_l.png",
+    "pupil_r": "pupil_r.png",
+    "body": "body.png"
+  },
+  "blank_eyes": true
+}

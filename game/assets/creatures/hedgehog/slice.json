@@ -1,0 +1,25 @@
+{
+  "species": "hedgehog",
+  "canvas": [
+    1536,
+    1536
+  ],
+  "pupils": [
+    [
+      595.9,
+      729.8
+    ],
+    [
+      940.8,
+      725.7
+    ]
+  ],
+  "pupil_radius": 45.5,
+  "pupil_travel": 25.0,
+  "layers": {
+    "pupil_l": "pupil_l.png",
+    "pupil_r": "pupil_r.png",
+    "body": "body.png"
+  },
+  "blank_eyes": true
+}

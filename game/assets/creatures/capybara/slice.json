@@ -1,0 +1,25 @@
+{
+  "species": "capybara",
+  "canvas": [
+    1536,
+    1536
+  ],
+  "pupils": [
+    [
+      553.2,
+      453.4
+    ],
+    [
+      995.3,
+      454.6
+    ]
+  ],
+  "pupil_radius": 36.8,
+  "pupil_travel": 20.2,
+  "layers": {
+    "pupil_l": "pupil_l.png",
+    "pupil_r": "pupil_r.png",
+    "body": "body.png"
+  },
+  "blank_eyes": true
+}

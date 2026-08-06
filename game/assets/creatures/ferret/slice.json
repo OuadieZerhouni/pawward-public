@@ -1,0 +1,25 @@
+{
+  "species": "ferret",
+  "canvas": [
+    1536,
+    1536
+  ],
+  "pupils": [
+    [
+      612.5,
+      487.9
+    ],
+    [
+      934.5,
+      485.6
+    ]
+  ],
+  "pupil_radius": 40.0,
+  "pupil_travel": 22.0,
+  "layers": {
+    "pupil_l": "pupil_l.png",
+    "pupil_r": "pupil_r.png",
+    "body": "body.png"
+  },
+  "blank_eyes": true
+}

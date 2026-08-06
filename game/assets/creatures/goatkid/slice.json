@@ -1,0 +1,25 @@
+{
+  "species": "goatkid",
+  "canvas": [
+    1536,
+    1536
+  ],
+  "pupils": [
+    [
+      558.2,
+      531.9
+    ],
+    [
+      973.2,
+      539.3
+    ]
+  ],
+  "pupil_radius": 29.8,
+  "pupil_travel": 16.4,
+  "layers": {
+    "pupil_l": "pupil_l.png",
+    "pupil_r": "pupil_r.png",
+    "body": "body.png"
+  },
+  "blank_eyes": true
+}

@@ -1,0 +1,13 @@
+{
+  "backdrop": "clinic_night.png",
+  "canvas": [
+    1080,
+    1920
+  ],
+  "opening": [
+    266,
+    549,
+    536,
+    649
+  ]
+}

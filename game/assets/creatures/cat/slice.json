@@ -1,0 +1,25 @@
+{
+  "species": "cat",
+  "canvas": [
+    1536,
+    1536
+  ],
+  "pupils": [
+    [
+      615.0,
+      687.0
+    ],
+    [
+      919.2,
+      685.6
+    ]
+  ],
+  "pupil_radius": 43.2,
+  "pupil_travel": 23.8,
+  "layers": {
+    "pupil_l": "pupil_l.png",
+    "pupil_r": "pupil_r.png",
+    "body": "body.png"
+  },
+  "blank_eyes": true
+}

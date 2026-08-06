@@ -1,0 +1,25 @@
+{
+  "species": "raccoon",
+  "canvas": [
+    1536,
+    1536
+  ],
+  "pupils": [
+    [
+      440.1,
+      854.0
+    ],
+    [
+      812.8,
+      883.5
+    ]
+  ],
+  "pupil_radius": 14.0,
+  "pupil_travel": 7.7,
+  "layers": {
+    "pupil_l": "pupil_l.png",
+    "pupil_r": "pupil_r.png",
+    "body": "body.png"
+  },
+  "blank_eyes": true
+}

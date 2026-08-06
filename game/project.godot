@@ -1,0 +1,48 @@
+; PawWard — Godot 4.7 project
+; Settings marked LOCKED are expensive to change later; see ../docs/decisions.md
+
+config_version=5
+
+[application]
+
+config/name="PawWard"
+config/version="0.1.0"
+run/main_scene="res://scenes/Title.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+
+[autoload]
+
+; Order matters: Difficulty and SaveGame are read by Roster and GameState during _ready.
+SaveGame="*res://scripts/autoloads/save_game.gd"
+Difficulty="*res://scripts/autoloads/difficulty.gd"
+Roster="*res://scripts/autoloads/roster.gd"
+GameState="*res://scripts/autoloads/game_state.gd"
+AudioBus="*res://scripts/autoloads/audio_bus.gd"
+DevTools="*res://scripts/dev/dev_tools.gd"
+
+[display]
+
+; LOCKED: portrait 1080x1920, canvas_items/expand handles 19.5:9 through iPad 4:3
+window/size/viewport_width=1080
+window/size/viewport_height=1920
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=1
+
+[rendering]
+
+; LOCKED: Compatibility renderer — broadest iOS device support for a 2D game.
+; All PawWard shaders are canvas_item shaders and work here. Only switch to
+; "mobile" if a shader genuinely needs RenderingDevice features.
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
+
+[file_customization]
+
+folder_colors={
+"res://assets/": "orange",
+"res://data/": "green",
+"res://scenes/": "blue",
+"res://scripts/": "purple"
+}

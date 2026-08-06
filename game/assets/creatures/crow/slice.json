@@ -1,0 +1,25 @@
+{
+  "species": "crow",
+  "canvas": [
+    1536,
+    1536
+  ],
+  "pupils": [
+    [
+      613.0,
+      456.3
+    ],
+    [
+      976.4,
+      460.6
+    ]
+  ],
+  "pupil_radius": 44.0,
+  "pupil_travel": 24.2,
+  "layers": {
+    "pupil_l": "pupil_l.png",
+    "pupil_r": "pupil_r.png",
+    "body": "body.png"
+  },
+  "blank_eyes": true
+}

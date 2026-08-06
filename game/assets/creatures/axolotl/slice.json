@@ -1,0 +1,25 @@
+{
+  "species": "axolotl",
+  "canvas": [
+    1536,
+    1536
+  ],
+  "pupils": [
+    [
+      536.7,
+      718.3
+    ],
+    [
+      986.8,
+      714.8
+    ]
+  ],
+  "pupil_radius": 30.0,
+  "pupil_travel": 16.5,
+  "layers": {
+    "pupil_l": "pupil_l.png",
+    "pupil_r": "pupil_r.png",
+    "body": "body.png"
+  },
+  "blank_eyes": true
+}
