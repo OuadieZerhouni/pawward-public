@@ -1,4 +1,28 @@
-# PawWard
+# PawWard: Creature Clinic
+
+A creepy-cute 2D game for iPhone. You work the night shift at an animal clinic: patients arrive at your intake window, most are fine, and some are subtly *wrong*. Check each one against its chart, use the handbook, X-ray and stethoscope as they unlock, and stamp **ADMIT** or **REJECT**. Three strikes ends the shift.
+
+<p align="center"><img src="art-pipeline/qa/shot_final.png" width="270" alt="PawWard gameplay: a ferret with a third eye at the intake window, its chart below"></p>
+
+> **Status: archived.** PawWard was built for the App Store in 2026 but never released, and is no longer developed. This repository is published as-is, as a reference.
+
+- **Engine:** Godot 4.7 (GDScript), portrait.
+- **Art:** watercolour creatures from a ComfyUI pipeline; "wrong" variants are inpainted onto the same plate so only the anomaly differs (see `art-pipeline/`).
+- **Design:** five anomaly channels (visual, skeleton, sound, behaviour, data), each needing a different tool, so difficulty grows by giving you more ways to look, not more patients.
+
+## Run it
+
+1. Install [Godot 4.7](https://godotengine.org/download).
+2. Open the **`game/`** folder (not the repo root) as a project and press Play.
+3. Unit tests: `godot --headless --path game res://tests/TestRunner.tscn`
+
+## License
+
+No open-source license is granted: the code, art and sound are © Ouadie Zerhouni, all rights reserved. You're welcome to read and learn from it; ask before reusing anything.
+
+## Developer notes
+
+The notes below were written while the app was in development. They mention internal files (planning notes, owner to-do lists) that may not be in this repository.
 
 A 2D iOS game. You work night shifts at an animal clinic. Cute creature patients arrive at
 your intake window; most are fine, some are subtly *wrong*. Compare each patient against its
@@ -6,10 +30,10 @@ chart and stamp **ADMIT** or **REJECT**. Three strikes ends the shift.
 
 Creepy-cute, zero gore, 13+. Godot 4.7, portrait, free with ads + a Pro unlock.
 
-Strategy, market evidence and revenue arithmetic: [`../NICHE-PAWWARD-PLAN.md`](../NICHE-PAWWARD-PLAN.md).
+Strategy, market evidence and revenue arithmetic: an internal planning document (not included).
 Build decisions and why they were made: [`docs/decisions.md`](docs/decisions.md).
 
-## The five anomaly channels
+### The five anomaly channels
 
 Difficulty escalates by giving the player more ways to **look**, not more patients. Each channel
 is a different kind of wrong, so learning to check the eyes does not make you safe.
@@ -31,7 +55,7 @@ normal count. Channel selection is therefore hard-gated on the tools the player 
 widened on a miss: an anomaly with no instrument to detect it is an unwinnable patient. Tests in
 `game/tests/` enforce exactly this.
 
-## Layout
+### Layout
 
 | Path | What |
 |---|---|
@@ -44,7 +68,7 @@ widened on a miss: an anomaly with no instrument to detect it is an unwinnable p
 | `docs/` | decision log, store copy |
 | `builds/` | export output — gitignored |
 
-## Running it
+### Running it
 
 ```sh
 GODOT=/c/Users/ouadi/tools/godot/Godot_v4.7.1-stable_win64_console.exe
@@ -68,7 +92,7 @@ from `assets/creatures/axolotl_01/` when present and falls back to procedural pl
 so the animation can be judged before any slicing is done. Hold **SPACE** to flip between
 base and anomaly, **1/2/3** to pick which anomaly, **G** to toggle grain.
 
-## Art pipeline
+### Art pipeline
 
 One creature = one base render + N anomaly variants + blink/mouth micro-frames, sliced into
 full-canvas registered layers.
@@ -78,7 +102,7 @@ other for free and no offset bookkeeping is needed. That is what makes an art an
 per-layer texture swap, which in turn means an anomalous patient animates *identically* to
 a healthy one — players have to look at the creature, not at its motion.
 
-### Three layers, and no manual slicing
+#### Three layers, and no manual slicing
 
 Of the four idle motions, only the **pupils** need separated geometry — breathing and sway act on
 the whole sprite about its feet, and blink/mouth are full-frame texture swaps. So a creature is:
@@ -103,7 +127,7 @@ the body kept its painted pupils they would show through whenever the tracking p
 Everything above is produced automatically — the plan's 20 × 20 minutes of hand-slicing in Krita
 is gone.
 
-### Generating
+#### Generating
 
 Krea 2 Turbo, settings frozen: **8 steps, cfg 1.0, `er_sde`, `simple`, 1024x1024**, with
 `krea2_softwatercolor` at 0.85. Reusable graph: `art-pipeline/prompts/krea2_base_txt2img.json`.
@@ -111,7 +135,7 @@ Krea 2 Turbo, settings frozen: **8 steps, cfg 1.0, `er_sde`, `simple`, 1024x1024
 There are **no negative prompts** — at cfg 1 the negative input is a `ConditioningZeroOut`
 of the positive, so guards like "exactly two eyes" must be phrased positively in the prompt.
 
-### Anomaly variants — two tracks
+#### Anomaly variants — two tracks
 
 Anomalies are produced by masked img2img with the *same model and LoRA* that painted the
 base, then hard-composited back through the mask. Outside-mask pixels come from the original
@@ -131,7 +155,7 @@ python art-pipeline/tools/composite_patch.py paste --base B.png --mask M.png --p
     --box-file DIR/box.txt --out VARIANT.png
 ```
 
-### Producing the roster
+#### Producing the roster
 
 `produce.py` drives every stage and is resumable, so adding a species never redoes settled work.
 Stage order matters: masks before frames/visual, xrays before skeleton, everything before slice.
@@ -151,7 +175,7 @@ The manifest is built from **what is actually on disk**, never from intent: it c
 promise a texture that was not produced (Roster would silently fall back to placeholder art for
 that creature and the mixed look would be obvious).
 
-### Tools
+#### Tools
 
 ```sh
 # derive eye/mouth/forehead masks by locating the pupils; ALWAYS eyeball the overlay after
@@ -171,7 +195,7 @@ actually is; thresholds and symmetry alone plateaued at 14/20 (see `docs/decisio
 `PUPIL_OVERRIDES` — add an entry there for any future miss rather than loosening the detector,
 which regresses the ones that work.
 
-### Driving the game without a human
+#### Driving the game without a human
 
 ```sh
 GODOT=/c/Users/ouadi/tools/godot/Godot_v4.7.1-stable_win64_console.exe
@@ -191,7 +215,7 @@ subtly unwinnable" — something unit tests on the shift builder cannot see. Tes
 necessary but **not sufficient** — a human still has to confirm the anomaly is findable in
 about five seconds when warned and missable at a glance when not.
 
-## Scope laws
+### Scope laws
 
 Cut anything that threatens these. They exist because the schedule is the strategy.
 
